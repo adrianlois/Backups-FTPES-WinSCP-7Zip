@@ -3,11 +3,12 @@ Batchfile - Automatizar Backups FTPES con WinSCP, 7zip
 
 recursos: Es necesario establecer como variables de entorno del sistema Windows los binarios: WinSCP.com y 7z.exe
 
-- Se comprimen los datos
-- Se envía el fichero comprimido a un servidor FTP de modo seguro
-- Se genera un único log de las acciones
-- Se envía el log por correo vía Gmail
-- Se eliminan los temporales creados en el proceso
+- 1. Se establecen las variables
+- 2. Se comprimen los datos en un único fichero comprimido temporal
+- 3. Se envía el fichero comprimido a un servidor FTP de modo seguro
+- 4. Se genera un único log de las acciones realizadas
+- 5. Se envía el log por correo vía Gmail
+- 6. Se eliminan los temporales creados en el proceso
 
 backup.bat: establecer los valores deseados en las variables
 
