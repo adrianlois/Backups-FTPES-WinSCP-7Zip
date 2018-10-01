@@ -1,6 +1,8 @@
 # Automatizar-Backups-FTPES-Batchfile
 Batchfile - Automatizar Backups FTPES con WinSCP y 7zip (2017)
 
+Más info: https://www.zonasystem.com/2017/07/automatizar-copias-de-seguridad-ftps-winscp-taskschd.html
+
 recursos: Es necesario establecer como variables de entorno del sistema Windows los binarios: WinSCP.com y 7z.exe
 
 - 1. Se establecen las variables
@@ -26,5 +28,3 @@ envio_log_email.ps1: establecer los valores deseados en las variables
 - $passwdEmail = "passwdEmail"
 - $asuntoEmail = "asuntoEmail"
 - $cuerpoEmail = "cuerpoEmail"
-
-Más info: https://www.zonasystem.com/2017/07/automatizar-copias-de-seguridad-ftps-winscp-taskschd.html
