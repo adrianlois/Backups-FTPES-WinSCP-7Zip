@@ -8,10 +8,11 @@ set mes=%date:~3,2%
 set dia=%date:~0,2%
 set hora=%time:~0,8%
 set backup=backup_%dia%-%mes%-%ano%.log
+set backupzip=Backup_%dia%-%mes%-%ano%.zip
 
 :: Credenciales y Paths
 set passwd7z=passwd7z
-set pathTempFichero7z="pathTempFichero7z"
+set pathTempFichero7z="pathTempFichero7z%backupzip%"
 set pathLocalDatos="pathLocalDatos"
 set pathRemotoFTP=pathRemotoFTP
 set usuarioFTP=usuarioFTP
@@ -55,7 +56,7 @@ if exist "ftp*.log" (
 	   echo -- ftp%backup% se eliminó correctamente >> %backup%
 	)
 :: Fichero temporal backup zip
-if exist "D:\Backup.zip" (
+if exist "D:\Backup*.zip" (
 	echo -- Backup.zip no se eliminó correctamente >> %backup%
 	) else (
 	   echo -- Backup.zip se eliminó correctamente >> %backup%
