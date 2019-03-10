@@ -57,9 +57,9 @@ if exist "ftp*.log" (
 	)
 :: Fichero temporal backup zip
 if exist "D:\Backup*.zip" (
-	echo -- Backup.zip no se eliminó correctamente >> %backuplog%
+	echo -- %backupzip% no se eliminó correctamente >> %backuplog%
 	) else (
-	   echo -- Backup.zip se eliminó correctamente >> %backuplog%
+	   echo -- %backupzip% se eliminó correctamente >> %backuplog%
 	)
 
 :: Llamada al script Powershell para el envío del log vía Email.
