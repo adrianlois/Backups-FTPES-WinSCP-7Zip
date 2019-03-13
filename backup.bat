@@ -19,7 +19,7 @@ set usuarioFTP=usuarioFTP
 set passwdFTP=passwdFTP
 set servidorFTP=servidorFTP
 set conexionFTP=ftp://%usuarioFTP%:%passwdFTP%@%servidorFTP%
-set fingerprint="xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
+set fingerprintSSLFTP="xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
 
 :: Comprobar si existen un backups log pasados
 if exist "*backup*.log" ( del /F /Q "*backup*.log" )
@@ -38,7 +38,7 @@ echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Subir el fichero comprimido al servidor FTP, generar log FTP, añadirlo al log de backup y mostrar una línea de separación.
-winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprint%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFichero7z%" "close" "exit"
+winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprintSSLFTP%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFichero7z%" "close" "exit"
 
 type ftp%backuplog% >> %backuplog%
 echo. >> %backuplog%
