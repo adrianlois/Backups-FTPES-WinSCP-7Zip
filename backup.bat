@@ -72,7 +72,7 @@ if exist "D:\Backup*.zip" (
 echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 :: Mostrar fecha y hora de la finalización del proceso de backup al final del log
-:: Se resetea nuevamente la variable hora para obtener la hora actual
+:: Se resetea la variable hora para obtener la hora actual
 set hora=%time:~0,8%
 echo El backup finaliza: %dia%-%mes%-%ano% - %hora% >> %backuplog%
 
