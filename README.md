@@ -28,6 +28,7 @@ https://myaccount.google.com/lesssecureapps
 - set usuarioFTP=usuarioFTP
 - set passwdFTP=passwdFTP
 - set servidorFTP=servidorFTP
+- set fingerprintSSLFTP="xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
 
 > **envio_log_email.ps1**: establecer los valores deseados en las variables
 
