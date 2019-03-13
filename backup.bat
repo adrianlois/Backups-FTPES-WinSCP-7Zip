@@ -21,7 +21,7 @@ set servidorFTP=servidorFTP
 set conexionFTP=ftp://%usuarioFTP%:%passwdFTP%@%servidorFTP%
 set fingerprintSSLFTP="xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
 
-:: Comprobar si existen un backups log pasados.
+:: Comprobar si existen ficheros de log pasados del backup.
 if exist "*backup*.log" ( del /F /Q "*backup*.log" )
 
 :: Mostrar fecha y hora del comienzo del proceso de backup al princpio del log.
