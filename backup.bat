@@ -24,7 +24,7 @@ set fingerprintSSLFTP="xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:
 :: Comprobar si existen un backups log pasados
 if exist "*backup*.log" ( del /F /Q "*backup*.log" )
 
-:: Mostrar fecha y hora del comienzo del proceso al princpio del log
+:: Mostrar fecha y hora del comienzo del proceso de backup al princpio del log
 echo El backup comienza: %dia%-%mes%-%ano% - %hora% > %backuplog%
 echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
@@ -71,6 +71,8 @@ if exist "D:\Backup*.zip" (
 
 echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
+:: Mostrar fecha y hora de la finalización del proceso de backup al final del log
+:: Se resetea nuevamente la variable hora para obtener la hora actual
 set hora=%time:~0,8%
 echo El backup finaliza: %dia%-%mes%-%ano% - %hora% >> %backuplog%
 
