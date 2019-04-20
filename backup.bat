@@ -27,7 +27,7 @@ if exist "*backup*.log" ( del /F /Q "*backup*.log" )
 :: Mostrar fecha y hora del comienzo del proceso de backup al princpio del log.
 echo El backup comienza: %dia%-%mes%-%ano% - %hora% > %backuplog%
 echo. >> %backuplog%
-echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
+echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Comprimir datos, generar log zip, agregarlo al backup log final y mostrar una línea de separación.
 :: En caso de excluir directorios y ficheros añadir a la línea de 7z el parámetro -xr!"<directorio_fichero>" tantas veces como elementos a excluir de la compresión.
@@ -35,14 +35,14 @@ echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 type zip%backuplog% >> %backuplog%
 echo. >> %backuplog%
-echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
+echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Subir el fichero comprimido al servidor FTP, generar log FTP, añadirlo al log de backup y mostrar una línea de separación.
 winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprintSSLFTP%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFichero7z%" "close" "exit"
 
 type ftp%backuplog% >> %backuplog%
 echo. >> %backuplog%
-echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
+echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Eliminar ficheros temporales: logs y fichero temporal backup zip.
 del /F /Q "zip*.log"
@@ -70,7 +70,7 @@ if exist "D:\Backup*.zip" (
 	)
 
 echo. >> %backuplog%
-echo # # # # # # # # # # # # # # # # # # # # >> %backuplog%
+echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 :: Mostrar fecha y hora de la finalización del proceso de backup al final del log.
 :: Se resetea la variable hora para obtener la hora actual hasta este momento del proceso de backup.
 set hora=%time:~0,8%
