@@ -37,7 +37,7 @@ type zip%backuplog% >> %backuplog%
 echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
-:: Subir el fichero comprimido al servidor FTP, generar log FTP, añadirlo al log de backup y mostrar una línea de separación.
+:: Subir el fichero comprimido con winscp.com al servidor FTP, generar log FTP, añadirlo al log de backup y mostrar una línea de separación.
 winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprintSSLFTP%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFicheroZip%" "close" "exit"
 
 type ftp%backuplog% >> %backuplog%
