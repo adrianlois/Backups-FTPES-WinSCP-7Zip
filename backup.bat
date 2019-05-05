@@ -11,8 +11,8 @@ set backuplog=backup_%dia%-%mes%-%ano%.log
 set backupzip=Backup_%dia%-%mes%-%ano%.zip
 
 :: Credenciales y Paths
-set passwd7z=passwd7z
-set pathTempFichero7z="pathTempFichero7z%backupzip%"
+set passwdZip=passwdZip
+set pathTempFicheroZip="pathTempFicheroZip%backupzip%"
 set pathLocalDatos="pathLocalDatos"
 set pathRemotoFTP=pathRemotoFTP
 set usuarioFTP=usuarioFTP
@@ -31,14 +31,14 @@ echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Comprimir datos, generar log zip, agregarlo al backup log final y mostrar una línea de separación.
 :: En caso de excluir directorios y ficheros añadir a la línea de 7z el parámetro -xr!"<directorio_fichero>" tantas veces como elementos a excluir de la compresión.
-7z a -tzip -p%passwd7z% -r %pathTempFichero7z% %pathLocalDatos% > zip%backuplog%
+7z a -tzip -p%passwdZip% -r %pathTempFicheroZip% %pathLocalDatos% > zip%backuplog%
 
 type zip%backuplog% >> %backuplog%
 echo. >> %backuplog%
 echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 
 :: Subir el fichero comprimido al servidor FTP, generar log FTP, añadirlo al log de backup y mostrar una línea de separación.
-winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprintSSLFTP%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFichero7z%" "close" "exit"
+winscp.com /log="ftp%backuplog%" /loglevel=2 /command "open %conexionFTP% -explicit -certificate=%fingerprintSSLFTP%" "cd %pathRemotoFTP%" "rm Backup*.zip" "put %pathTempFicheroZip%" "close" "exit"
 
 type ftp%backuplog% >> %backuplog%
 echo. >> %backuplog%
@@ -47,7 +47,7 @@ echo # # # # # # # # # # # # # # # # # # # # # >> %backuplog%
 :: Eliminar ficheros temporales: logs y fichero temporal backup zip.
 del /F /Q "zip*.log"
 del /F /Q "ftp*.log"
-del /F /Q %pathTempFichero7z%
+del /F /Q %pathTempFicheroZip%
 
 :: Comprobar la eliminación de ficheros de log y fichero temporal backup zip, insertar el resultado en el log.
 :: Log de la compresión zip.
