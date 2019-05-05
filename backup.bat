@@ -77,4 +77,4 @@ set hora=%time:~0,8%
 echo El backup finaliza: %dia%-%mes%-%ano% - %hora% >> %backuplog%
 
 :: Llamada al script Powershell para el envío del log vía Email.
-powershell.exe -file "envio_log_email.ps1"a
+powershell.exe -file "envio_log_email.ps1"
