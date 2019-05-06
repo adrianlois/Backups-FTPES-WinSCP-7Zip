@@ -19,7 +19,7 @@ https://myaccount.google.com/lesssecureapps
 
 ![Aplicaciones menos seguras Google](https://raw.githubusercontent.com/adrianlois/Automatizar-Backups-FTPES-Batchfile/master/screenshots-test/ejecucion_app_menos_seguras_gmail.png)
 
-> **backup.bat**: establecer los valores deseados en las variables. (Aunque se use 7z.exe el tipo de fichero será en formato zip protegido con una contraseña).
+> **backup_ftpes.bat**: establecer los valores deseados en las variables. (Aunque se use 7z.exe el tipo de fichero será en formato zip protegido con una contraseña).
 
 - set passwdZip=passwdZip
 - set pathTempFicheroZip="pathTempFicheroZip"
