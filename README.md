@@ -1,4 +1,4 @@
-# Backups FTPES WinSCP y 7Zip
+# Backups-FTPES-WinSCP-7Zip
 Batchfile - Automatizar Backups FTPES con WinSCP y 7zip (2017)
 
 Más info: https://www.zonasystem.com/2017/07/automatizar-copias-de-seguridad-ftps-winscp-taskschd.html
