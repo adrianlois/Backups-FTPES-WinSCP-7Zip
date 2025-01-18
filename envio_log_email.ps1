@@ -1,7 +1,3 @@
-#####################
-# Autor @adrianlois_
-#####################
-
 # Variables
 $fechaHoraActual = Get-Date -uformat "%d/%m/%Y - %H:%M:%S"
 $usuarioEmail = "usuarioEmail@gmail.com" 
@@ -12,6 +8,6 @@ $cuerpoEmail = "cuerpoEmail"
 $secPasswdEmail = ConvertTo-SecureString $passwdEmail -AsPlainText -Force
 $credencialesEmail = New-Object System.Management.Automation.PSCredential ($usuarioEmail, $secPasswdEMail)
 
-# Env��o del fichero log adjunto v��a Email usando Gmail.
+# Envío del fichero log adjunto vía Email usando Gmail.
 Send-MailMessage -From $usuarioEmail -To $usuarioEmail -Subject "$asuntoEmail - $fechaHoraActual" -Body "$cuerpoEmail - $fechaHoraActual" -Attachments "backup*.log" -SmtpServer smtp.gmail.com -UseSsl -Credential $credencialesEmail
 exit

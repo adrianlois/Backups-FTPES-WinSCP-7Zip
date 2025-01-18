@@ -1,6 +1,6 @@
 @echo off
-rem Autor @adrianlois_
-title Backups by @adrianlois_
+
+title Backups
 
 :: Fecha y Hora
 set ano=%date:~6,4%
