@@ -12,6 +12,6 @@ $cuerpoEmail = "cuerpoEmail"
 $secPasswdEmail = ConvertTo-SecureString $passwdEmail -AsPlainText -Force
 $credencialesEmail = New-Object System.Management.Automation.PSCredential ($usuarioEmail, $secPasswdEMail)
 
-# Enví­o del fichero log adjunto ví­a Email usando Gmail.
+# Envï¿½ï¿½o del fichero log adjunto vï¿½ï¿½a Email usando Gmail.
 Send-MailMessage -From $usuarioEmail -To $usuarioEmail -Subject "$asuntoEmail - $fechaHoraActual" -Body "$cuerpoEmail - $fechaHoraActual" -Attachments "backup*.log" -SmtpServer smtp.gmail.com -UseSsl -Credential $credencialesEmail
 exit

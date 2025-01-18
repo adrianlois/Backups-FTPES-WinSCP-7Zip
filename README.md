@@ -32,7 +32,7 @@ https://myaccount.google.com/lesssecureapps
 
 > **envio_log_email.ps1**: establecer los valores deseados en las variables.
 
-- $usuarioEmail = "usuarioEmail@gmail.com" 
+- $usuarioEmail = "usuario@gmail.com" 
 - $passwdEmail = "passwdEmail"
 - $asuntoEmail = "asuntoEmail"
 - $cuerpoEmail = "cuerpoEmail"
