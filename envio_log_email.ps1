@@ -1,5 +1,5 @@
 # Variables
-$fechaHoraActual = Get-Date -uformat "%d/%m/%Y - %H:%M:%S"
+$fechaHoraActual = Get-Date -Format "dd-MM-yyyy - HH:mm:ss"
 $usuarioEmail = "usuarioEmail@gmail.com" 
 $passwdEmail = "passwdEmail"
 $asuntoEmail = "asuntoEmail"
